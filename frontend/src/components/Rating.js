@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Rating({ value, text, color }) {
+const Rating = ({ value, text, color }) => {
   return (
     <div className='rating'>
       <span>
@@ -13,7 +13,7 @@ function Rating({ value, text, color }) {
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
-        />
+        ></i>
       </span>
       <span>
         <i
@@ -25,7 +25,7 @@ function Rating({ value, text, color }) {
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
-        />
+        ></i>
       </span>
       <span>
         <i
@@ -37,7 +37,7 @@ function Rating({ value, text, color }) {
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
-        />
+        ></i>
       </span>
       <span>
         <i
@@ -49,7 +49,7 @@ function Rating({ value, text, color }) {
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
-        />
+        ></i>
       </span>
       <span>
         <i
@@ -61,7 +61,7 @@ function Rating({ value, text, color }) {
               ? 'fas fa-star-half-alt'
               : 'far fa-star'
           }
-        />
+        ></i>
       </span>
       <span>{text && text}</span>
     </div>

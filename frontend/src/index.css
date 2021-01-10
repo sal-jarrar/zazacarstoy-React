@@ -1,19 +1,120 @@
 main {
   min-height: 80vh;
 }
-h1 {
-  font-size: 1.8rem;
-  padding: 1rem 0;
-}
-h2 {
-  font-size: 1.4rem;
-  padding: 0.5rem 0;
-}
 
 h3 {
   padding: 1rem 0;
 }
 
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+}
+
 .rating span {
   margin: 0.1rem;
 }
+
+/* carousel */
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  display: flex;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+}
+
+.carousel-caption h2 {
+  color: #fff;
+}
+
+.carousel img {
+  height: 300px;
+  padding: 30px;
+  margin: 40px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.carousel a {
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .carousel-caption h2 {
+    font-size: 2.5vw;
+  }
+}
+.navbar {
+  background-image: linear-gradient(#fd0000, #c43030, rgb(107, 64, 64));
+}
+.carousel {
+  background-image: linear-gradient(rgb(43, 48, 54), white);
+}
+.welcome {
+  height: 100vh;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-image: url('./pics/c2.jpg');
+}
+
+.inner h1 {
+  color: rgb(29, 21, 21);
+  font-size: 2.5rem;
+  margin-bottom: 5vh;
+}
+.inner h4 {
+  color: rgb(75, 57, 57);
+}
+
+.inner .view {
+  background-image: linear-gradient(white, black);
+  margin-bottom: 10vh;
+  border-radius: 25%;
+}
+@media screen and (max-width: 760px) {
+  .inner h1 {
+    font-size: 2rem;
+  }
+  .inner h4 {
+    font-size: 0.7rem;
+  }
+  .inner .view {
+    margin-bottom: 25vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .search {
+    margin-top: 10px;
+  }
+}
+.col .image {
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@1,100&display=swap');
+
+.site-footer {
+  background-image: linear-gradient(#e93131, white);
+  padding: 20px 0;
+  font-family: 'Piazzolla', serif;
+  font-size: 17px;
+}
+
+/* .container h5 {
+  color: rgba(229, 147, 195, 0.986);
+  font-size: 20px;
+} */

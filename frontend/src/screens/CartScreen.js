@@ -3,24 +3,26 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import Message from '../components/Message'
-import { addToCart, removeFromCart } from '../redux/cart/cartActions'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 
-function CartScreen({ match, history, location }) {
-  const dispatch = useDispatch()
-  const cart = useSelector((state) => state.cart)
+const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id
+
   const qty = location.search ? Number(location.search.split('=')[1]) : 1
+
+  const dispatch = useDispatch()
+
+  const cart = useSelector((state) => state.cart)
+  const { cartItems } = cart
+
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty))
     }
   }, [dispatch, productId, qty])
 
-  const { cartItems } = cart
-
-  const reomveFromCartHandler = (id) => {
+  const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id))
-    console.log('hi')
   }
 
   const checkoutHandler = () => {
@@ -33,7 +35,7 @@ function CartScreen({ match, history, location }) {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>
-            Your Cart is empty <Link to='/'>Go Back</Link>
+            Your cart is empty <Link to='/home'>Go Back</Link>
           </Message>
         ) : (
           <ListGroup variant='flush'>
@@ -58,7 +60,7 @@ function CartScreen({ match, history, location }) {
                       }
                     >
                       {[...Array(item.countInStock).keys()].map((x) => (
-                        <option value={x + 1} key={x + 1}>
+                        <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>
                       ))}
@@ -68,9 +70,9 @@ function CartScreen({ match, history, location }) {
                     <Button
                       type='button'
                       variant='light'
-                      onClick={()=>reomveFromCartHandler(item.product)}
+                      onClick={() => removeFromCartHandler(item.product)}
                     >
-                      <i className='fas fa-trash' />
+                      <i className='fas fa-trash'></i>
                     </Button>
                   </Col>
                 </Row>

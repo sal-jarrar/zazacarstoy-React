@@ -1,23 +1,17 @@
 import React from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import HomeScreen from './screens/HomeScreen'
-import ProductScreen from './screens/ProductScreen'
-import CartScreen from './screens/CartScreen'
-import { Container } from 'react-bootstrap'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-const App = () => (
-  <Router>
-    <Header />
-    <main className='py-3'>
-      <Container>
-        <Route exact path='/' component={HomeScreen} />
-        <Route exact path='/product/:id' component={ProductScreen} />
-        <Route path='/cart/:id?' component={CartScreen} />
-      </Container>
-    </main>
-    <Footer />
-  </Router>
-)
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import defaultContainer from './defaultContainer'
+import WelcomScreen from './screens/WelcomScreen'
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route exact path='/' component={WelcomScreen} />
+        <Route component={defaultContainer} />
+      </Switch>
+    </Router>
+  )
+}
 
 export default App
